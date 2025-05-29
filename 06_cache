@@ -1,0 +1,23 @@
+'''
+The functools.cache decorator in Python is used to cache the results of function calls, 
+which can be particularly useful for functions that are computationally expensive and 
+called frequently with the same arguments. This decorator was introduced in Python 3.9, 
+and it's a simpler and more efficient version compared to functools.lru_cache.
+'''
+
+from functools import cache
+
+@cache
+def fibonacci(n):
+    """Return the nth Fibonacci number."""
+    if n < 0:
+        raise ValueError("Fibonacci number cannot be computed for negative indices.")
+    elif n in (0, 1):
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+# Example usage:
+print(f"Fibonacci(10): {fibonacci(10)}")  # Output: Fibonacci(10): 55
+print(f"Fibonacci(20): {fibonacci(20)}")  # Output: Fibonacci(20): 6765
+print(f"Fibonacci(30): {fibonacci(30)}")  # Output: Fibonacci(30): 832040
