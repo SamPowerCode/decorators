@@ -1,3 +1,9 @@
+'''
+The @property decorator in Python is used to define a method as a property, 
+allowing you to access it like an attribute. This is useful when you want 
+to control access to an attribute, compute its value dynamically, or validate it.
+'''
+
 class Circle:
     def __init__(self, radius):
         self._radius = radius
